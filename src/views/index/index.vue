@@ -10,7 +10,8 @@ export default {
   data(){
       return {
           zoom: 16,
-          center: [121.074223,32.065946]
+          center: [121.074223,32.065946],
+          data:[]
       }
   }
 };
