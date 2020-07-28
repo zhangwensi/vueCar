@@ -1,23 +1,47 @@
 <template>
-  <div class="main-map">
-    <el-amap vid="amapDemo" :center="center" :zoom="zoom" class="amap-demo"></el-amap>
+  <div>
+    <Cars />
+    <Map />
+    <div id="users-view" :class="[ isShow ? 'open' : '']">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
+import Map from '../amap/Amap'
+import Cars from '../cars/Cars'
 export default {
-  name: "Home",
+  name: "Index",
+  components: {Map,Cars},
   data(){
-      return {
-          zoom: 16,
-          center: [121.074223,32.065946]
+    return {
+      isShow: false
+    }
+  },
+  watch: {
+    "$route": {
+      handler(newValue){
+        const routeName = newValue.name
+        this.isShow = routeName === "Home" ? false : true
       }
+    }
   }
 };
 </script>
 
 <style lang="scss">
-    .main-map {
-        height: 100vh;
-    }
+#users-view {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  bottom: 0;
+  background-color: #34393f;
+  width: 410px;
+  z-index: 101;
+  transition: all .3s ease;
+  &.open {
+    right: 0px;
+  }
+}
 </style>
