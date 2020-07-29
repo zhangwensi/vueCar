@@ -2,7 +2,7 @@
   <div>
     <Cars />
     <Map />
-    <div id="users-view" :class="[ isShow ? 'open' : '']">
+    <div id="users-view" :class="{open:show}">
       <router-view />
     </div>
   </div>
@@ -19,14 +19,13 @@ export default {
       isShow: false
     }
   },
-  watch: {
-    "$route": {
-      handler(newValue){
-        const routeName = newValue.name
-        this.isShow = routeName === "Home" ? false : true
-      }
+  computed: {
+    show() {
+      const routeName = this.$route.name
+      return routeName === 'Home' ? false : true
     }
-  }
+  },
+  watch: {}
 };
 </script>
 
