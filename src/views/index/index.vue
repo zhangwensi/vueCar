@@ -2,31 +2,32 @@
   <div>
     <Cars />
     <Map />
-    <div id="users-view" :class="[ isShow ? 'open' : '']">
+    <div id="users-view" :class="{open:show}">
       <router-view />
     </div>
+    <MapNavbar />
   </div>
 </template>
 
 <script>
 import Map from '../amap/Amap'
 import Cars from '../cars/Cars'
+import MapNavbar from '@c/navbar/MapNavbar.vue'
 export default {
   name: "Index",
-  components: {Map,Cars},
+  components: {Map,Cars,MapNavbar},
   data(){
     return {
       isShow: false
     }
   },
-  watch: {
-    "$route": {
-      handler(newValue){
-        const routeName = newValue.name
-        this.isShow = routeName === "Home" ? false : true
-      }
+  computed: {
+    show() {
+      const routeName = this.$route.name
+      return routeName === 'Home' ? false : true
     }
-  }
+  },
+  watch: {}
 };
 </script>
 

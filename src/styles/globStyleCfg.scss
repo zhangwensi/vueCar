@@ -1,0 +1,22 @@
+$color-main:  #34393f;
+$color-blue: #00a3ff;
+
+@mixin webkit ($type,$value) {
+    -moz-#{$type}: $value;
+    -webkit-#{$type}: $value;
+    -o-#{$type}: $value;
+    #{$type}: $value;
+}
+
+/* clearfix */
+@mixin clearfix {
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+    }
+    *height: 1%;
+}
