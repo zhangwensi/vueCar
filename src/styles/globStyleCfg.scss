@@ -9,7 +9,7 @@ $color-blue: #00a3ff;
 }
 
 /* clearfix */
-@mixin clearfix {
+%clearfix {
     &:after {
         clear: both;
         content: '.';
@@ -19,4 +19,13 @@ $color-blue: #00a3ff;
         overflow: hidden;
     }
     *height: 1%;
+}
+
+/* 定义浮动*/ 
+.pull-right {float: right;}
+.pull-left {float: left;}
+.clearfix { @extend %clearfix;}
+
+.fs-24 {
+    font-size: 24px;
 }

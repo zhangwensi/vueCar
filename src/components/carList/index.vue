@@ -11,7 +11,7 @@
             <div class="car-context">
                 <div class="car-info">
                     <div>
-                        <h4 class="car-number">苏 H3922N</h4>
+                        <h4 class="car-number">苏 HAE86</h4>
                         <div class="car-process">
                             <ul>
                                 <li class="li-active"></li>
@@ -37,14 +37,59 @@
                 <a href="javascript:void(0);" >某停车场</a>
             </footer>
         </section>
+        <section class="cars-card cars-detail" :style="'height:'+height">
+            <h4 class="column">某某停车场
+                <i class="close"></i>
+            </h4>
+            <header>
+                <h4 class="car-logo">
+                    <img src="../../assets/images/cars-logo.png" alt="Mustang 2019款">
+                    <span class="name">Mustang 2019款</span>
+                </h4>
+                <p class="attr">新能源汽车 5座</p>
+            </header>
+            <img src="../../assets/images/pic001.jpg" alt="pic001">
+            <div class="clearfix">
+                <div class="fs-24 pull-left">苏 HAE86</div>
+                <p class="distance pull-right">
+                    <sub>约</sub><strong>600</strong><sub>KM</sub>
+                </p>
+            </div>
+            <div class="car-process-wraper">
+                <span class="el-line"></span>
+                <span class="el-bg"></span>
+            </div>
+            <p class="info">取车约支付12万，本平台优惠12万</p>
+            <ul class="cars-check-list">
+                <li>
+                    <h4 class="name pull-left">日租车</h4>
+                    <span class="price pull-right">￥3000/天</span>
+                </li>
+                <li>
+                    <h4 class="name pull-left">时租车</h4>
+                    <span class="price pull-right">￥300/时</span>
+                </li>
+                <li>
+                    <h4 class="name pull-left">长期租车</h4>
+                    <span class="price pull-right">￥30000/月</span>
+                </li>
+            </ul>
+        </section>
     </div>
 </template>
 
 <script>
 export default {
     name: 'Index',
+    props: {
+        height: {
+            type: String,
+            default: '257px'
+        }
+    },
     data(){
-        return {}
+        return {
+        }
     }
 }
 </script>
@@ -65,7 +110,7 @@ export default {
         // h4, p {
         //     flex: 1;
         // }
-        @include clearfix;
+        @extend %clearfix;
         height: 34px;
     }
 }
@@ -84,7 +129,7 @@ export default {
     opacity: 0.5;        
 }
 .car-context {
-    @include clearfix;
+    @extend %clearfix;
     margin: 11px 0 7px;
     position: relative;
     img {
@@ -126,20 +171,20 @@ export default {
     li.li-active {
         background: linear-gradient(to top,#17a8fa,#108dd9);
     }
-    .distance {
-        display: inline-block;
-        margin-left: 5px;
-        strong {
-            margin: 0 5px;
-            font-size: 22px;
-        }
-        sub {
-            position: relative;
-            top: -10px;
-        }
-        sub:first-of-type {
-            opacity: 0.8;
-        }
+}
+.distance {
+    display: inline-block;
+    margin-left: 5px;
+    strong {
+        margin: 0 5px;
+        font-size: 22px;
+    }
+    sub {
+        position: relative;
+        top: -10px;
+    }
+    sub:first-of-type {
+        opacity: 0.8;
     }
 }
 .car-link {
@@ -171,5 +216,88 @@ export default {
         @include webkit (transform,rotate(45deg));
         cursor: pointer;
     }   
+}
+.cars-detail {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding-top: 0px;
+    .column {
+        font-size: 20px;
+        color: #34393f;
+        border-bottom: 1px solid #e1e1e1;
+        padding: 26px 0 20px;
+        position: relative;
+        .close {
+            position: absolute;
+            display: block;
+            height: 26px;
+            width: 26px;
+            right: 0px;
+            top: 23px;
+            margin-bottom: 19px;
+            cursor: pointer;
+            &::after, &::before {
+                content: "";
+                border-left: 2px solid #999c9f;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -10px;
+                margin-left: -1px;
+            }
+            &::before {@include webkit(transform,rotate(45deg))}
+            &::after {@include webkit(transform,rotate(-45deg))}
+        }
+    }
+    .car-process-wraper {
+        margin-top: 17px;
+        padding: 15px;
+        border-radius: 100px;
+        background-color: #fff;
+        @include webkit(box-shadow,0 0 10px 0 rgba(0,0,0,0.1));
+        .el-bg {
+            height: 8px;
+            display: block;
+            background-color: #e1e1e1;
+            border-radius: 100px;
+        }
+        .el-line {
+            width: 60%;
+            height: 8px;
+            display: block;
+            background-color: #0f9cee;
+            border-radius: 100px;
+            position: absolute;
+        }
+    }
+    .info {
+        margin: 32px 0px 28px;
+        display: block;
+        text-align: center;
+    }
+}
+.cars-check-list {
+    li {
+        height: 43px;
+        padding: 0px 17px 0px 20px;
+        border-color: #f3f3f3;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 10px;
+        background-color: #f3f3f3;
+        margin-bottom: 10px;
+        line-height: 43px;
+        font-size: 16px;
+        cursor: pointer;
+        &:hover {
+            border-color: #0f9cee;
+        }
+    }
+    .name, .price {
+        margin: 0px;
+    }
 }
 </style>

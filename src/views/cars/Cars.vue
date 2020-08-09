@@ -2,8 +2,8 @@
     <div class="cars-wrap">
         <div class="car-list-swiper">
             <swiper class="swiper" :options="swiperOption">
-                <swiper-slide>
-                    <CarList />
+                <swiper-slide >
+                    <CarList height="800px" />
                 </swiper-slide>
                 <swiper-slide>
                     <CarList />
@@ -65,6 +65,9 @@ export default {
 }
 .car-list-swiper {
     padding: 0px 155px;
+    .swiper-container {
+        overflow: initial;
+    }
     .swiper-button-prev,
     .swiper-button-next {
         position: absolute;
