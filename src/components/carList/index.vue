@@ -74,6 +74,11 @@
                     <span class="price pull-right">￥30000/月</span>
                 </li>
             </ul>
+            <div class="footer">
+                <span class="pull-left">参保《全面保障服务》用车更放心</span>
+                <i class="pull-right current"></i>
+            </div>
+            <a href="javascript:void(0);" class="select-car select-car-btn"> 预约用车</a>
         </section>
     </div>
 </template>
@@ -223,6 +228,12 @@ export default {
     right: 0px;
     bottom: 0px;
     padding-top: 0px;
+    .select-car-btn {
+        position: absolute;
+        left: 50%;
+        margin-left: -120px;
+        bottom: -42px;
+    }
     .column {
         font-size: 20px;
         color: #34393f;
@@ -298,6 +309,29 @@ export default {
     }
     .name, .price {
         margin: 0px;
+    }
+}
+.footer {
+    @extend %clearfix;
+    i {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #cccccc;
+        cursor: pointer;
+        &::before {
+            content: '';
+            height: 6px;
+            width: 10px;
+            margin: 5px 0 0 5px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            @include webkit(transform,rotate(-45deg));
+            display: block;
+        }  
+    }
+    .current {
+        background-color: #000;
     }
 }
 </style>

@@ -3,7 +3,7 @@
         <div class="car-list-swiper">
             <swiper class="swiper" :options="swiperOption">
                 <swiper-slide >
-                    <CarList height="800px" />
+                    <CarList height="820px" />
                 </swiper-slide>
                 <swiper-slide>
                     <CarList />
