@@ -9,7 +9,7 @@
                 </a>
             </li>
             <li><i class="icon icon-location" ></i></li>
-            <li><i class="icon icon-user" ></i></li>
+            <li><i class="icon icon-user" @click="handleUser"></i></li>
         </ul>
     </div>
 </template>
@@ -19,7 +19,14 @@ export default {
     name: 'MapNavbar',
     data(){
         return {}
-    }
+    },
+    methods: {
+        handleUser() {
+            this.$router.push({
+                name:'User'
+            })
+        }
+    },
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Cars />
+    <!-- <Cars /> -->
     <Map />
     <div id="users-view" :class="{open:show}">
       <router-view />
@@ -27,7 +27,20 @@ export default {
       return routeName === 'Home' ? false : true
     }
   },
-  watch: {}
+  watch: {},
+  mounted() {
+    // 页面加载完成时，需要判断点击位置来确认是否显示用户列表页面
+    document.addEventListener('mouseup',(e)=>{
+      const userLab = document.getElementById('users-view')
+      if(userLab) {
+        if (!userLab.contains(e.target)) {
+          this.$router.push({
+            name:'Home'
+          })
+        }
+      }
+    })
+  },
 };
 </script>
 
