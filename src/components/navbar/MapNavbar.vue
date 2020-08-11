@@ -1,15 +1,15 @@
 <template>
     <div class="mapNavbar-wrap">
         <ul>
-            <li><i class="icon icon-help" ></i></li>
-            <li><i class="icon icon-search" ></i></li>
+            <li><i class="icon icon-44-w icon-help" ></i></li>
+            <li><i class="icon icon-44-w icon-search" ></i></li>
             <li>
                 <a href="javascript:void(0);" class="select-car">
                     选择车辆
                 </a>
             </li>
-            <li><i class="icon icon-location" ></i></li>
-            <li><i class="icon icon-user" @click="handleUser"></i></li>
+            <li><i class="icon icon-44-w icon-location" ></i></li>
+            <li><i class="icon icon-44-w icon-user" @click="handleUser"></i></li>
         </ul>
     </div>
 </template>

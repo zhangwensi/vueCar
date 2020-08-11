@@ -3,11 +3,13 @@
 
 i[class^=icon] {
     display: inline-block;
-    width: 44px;
-    height: 44px;
     border-radius: 100px;
     background-color: $color-main;
     background-repeat: no-repeat;
+}
+.icon-44-w {
+    width: 44px;
+    height: 44px;
 }
 .icon-help {
     background-image: url(~@/assets/images/icon/icon-help.png);
@@ -20,4 +22,19 @@ i[class^=icon] {
 }
 .icon-user {
     background-image: url(~@/assets/images/icon/icon-user.png);
+}
+.icon-link-1 {
+    background-image: url(~@/assets/images/icon/icon-router-link-001.png);
+}
+.icon-link-2 {
+    background-image: url(~@/assets/images/icon/icon-router-link-002.png);
+}
+.icon-link-3 {
+    background-image: url(~@/assets/images/icon/icon-router-link-003.png);
+}
+.icon-link-4 {
+    background-image: url(~@/assets/images/icon/icon-router-link-004.png);
+}
+.icon-link-5 {
+    background-image: url(~@/assets/images/icon/icon-router-link-005.png);
 }
