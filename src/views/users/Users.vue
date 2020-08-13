@@ -7,7 +7,6 @@
                 <span>安全驾驶分 <strong>0</strong></span>
             </div>
         </div>
-        <router-link ></router-link>
         <ul class="group-link">
             <router-link to="aaa" tag="a" class="arrow">
                 <i class="icon icon-style icon-link-1"></i>

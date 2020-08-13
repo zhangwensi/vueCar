@@ -34,6 +34,7 @@ export default {
       const userLab = document.getElementById("users-view");
       if (userLab) {
         if (!userLab.contains(e.target)) {
+          console.log('2222')
           this.$router.push({
             name: "Home"
           });

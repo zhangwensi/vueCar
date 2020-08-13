@@ -41,6 +41,7 @@ a:link {
 /*已经访问过的链接*/
 a:visited {
     text-decoration: none;
+    color: rgba(255,255,255,0.4);
 }
 /*鼠标划过(停留)的链接*/
 a:hover {

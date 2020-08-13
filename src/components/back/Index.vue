@@ -18,6 +18,8 @@ export default {
     },
     data(){
         return {}
+    },
+    methods: {
     }
 }
 </script>
@@ -45,6 +47,7 @@ export default {
         position: absolute;
         left: 0px;
         top: 0px;
+        cursor: pointer;
         &::after {
             content: "";
             position: absolute;
