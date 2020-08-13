@@ -5,13 +5,13 @@
             <router-link to="password" tag="a" class="arrow">
                 修改登录密码
             </router-link>
-            <router-link to="bbb" tag="a" class="arrow">
+            <router-link to="fund" tag="a" class="arrow">
                 设置资金密码
             </router-link>
-            <router-link to="ccc" tag="a" class="arrow">
+            <router-link to="phone" tag="a" class="arrow">
                 绑定手机号码
             </router-link>
-            <router-link to="ddd" tag="a" class="arrow">
+            <router-link to="addBank" tag="a" class="arrow">
                 绑定银行卡号
             </router-link>
         </ul>

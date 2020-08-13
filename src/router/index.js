@@ -23,6 +23,21 @@ const routes = [
         path: "/password",
         name: "Password",
         component:()=> import("../views/safe/password.vue")
+      },
+      {
+        path: "/fund",
+        name: "Fund",
+        component:()=> import("../views/safe/fund.vue")
+      },
+      {
+        path: "/phone",
+        name: "Phone",
+        component:()=> import("../views/safe/phone.vue")
+      },
+      {
+        path: "/AddBank",
+        name: "AddBank",
+        component:()=> import("../views/safe/addBank.vue")
       }
     ]
   }
@@ -33,5 +48,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
+
+const originalPush = VueRouter.prototype.push
+   VueRouter.prototype.push = function push(location) {
+   return originalPush.call(this, location).catch(err => err)
+}
 
 export default router;

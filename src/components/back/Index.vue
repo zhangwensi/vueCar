@@ -1,7 +1,7 @@
 <template>
     <div class="header-back">
         <div class="back">
-            <i class="icon-style" @click="Back"></i>
+            <i class="icon-style"></i>
             <h4 class="title">{{culome}}</h4>
         </div>
     </div>
@@ -20,12 +20,7 @@ export default {
         return {}
     },
     methods: {
-        Back : function () {
-            this.$router.push({
-                name: 'User'
-            })
-        }
-    },
+    }
 }
 </script>
 
