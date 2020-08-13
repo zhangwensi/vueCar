@@ -2,7 +2,7 @@
     <div class="user-container">
         <GoBack culome="安全设置" />
         <ul class="group-link">
-            <router-link to="aaa" tag="a" class="arrow">
+            <router-link to="password" tag="a" class="arrow">
                 修改登录密码
             </router-link>
             <router-link to="bbb" tag="a" class="arrow">

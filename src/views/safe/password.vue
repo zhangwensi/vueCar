@@ -1,36 +1,29 @@
 <template>
-    <div class="header-back">
+    <div class="header-safe">
         <div class="back">
-            <i class="icon-style" @click="Back"></i>
-            <h4 class="title">{{culome}}</h4>
+            <i class="icon-style" @click="Safe"></i>
+            <h4 class="title">修改登录密码</h4>
         </div>
     </div>
 </template>
-
 <script>
 export default {
-    name: 'Back',
-    props: {
-        culome : {
-            type: String,
-            default: ""
-        }
-    },
-    data(){
+    name: "password",
+    data() {
         return {}
     },
     methods: {
-        Back : function () {
+        Safe : function () {
             this.$router.push({
-                name: 'User'
+                name: 'Safe'
             })
         }
-    },
+    }
 }
 </script>
 
 <style lang="scss">
-.header-back {
+.header-safe {
     padding-bottom: 147px;
     position: relative;
     .back {
@@ -40,6 +33,7 @@ export default {
         right: 0px;
         height: 40px;
         line-height: 40px;
+        margin-left: 30px;
     }
     .title {
         font-size: 16px;
@@ -67,5 +61,5 @@ export default {
             cursor: pointer;
         }
     }
-}
+}    
 </style>
